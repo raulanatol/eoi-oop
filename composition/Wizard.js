@@ -1,0 +1,14 @@
+const canTalk = require('./actions/canTalk');
+const canFly = require('./actions/canFly');
+
+const Wizard = (name = 'Paco', life = 10) => {
+  let state = {
+    name,
+    life,
+    x: 0,
+    y: 0
+  };
+  return Object.assign(state, canTalk(), canFly(state))
+};
+
+module.exports = Wizard;
